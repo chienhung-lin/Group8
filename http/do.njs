@@ -7,8 +7,13 @@ fs = require('fs');
 
 querystring = require('querystring');
 
+
+
 var param = querystring.parse(process.env.QUERY_STRING);
+
+var fs = require('fs');
+var obj = JSON.parse(fs.readFileSync('name.json', 'utf8'));
 
 console.log('Content-type: text/html; charset=utf-8\n');
 
-console.log('<h1>' + param['ID'] + '</h1>'); 
+console.log('<h1>' + obj[param['name']] + '</h1>'); 
