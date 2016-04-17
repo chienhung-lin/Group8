@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	$('button[type=submit]'.click(function(){
 	    $.ajax({
-		$data:{
-			id:$('input[name=id]').val()
+		data:{
+			id:$('input[name=name]').val()
 		},
 		url: 'do.njs',
 		success:function(data){
