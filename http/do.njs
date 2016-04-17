@@ -16,4 +16,4 @@ var obj = JSON.parse(fs.readFileSync('name.json', 'utf8'));
 
 console.log('Content-type: text/html; charset=utf-8\n');
 
-console.log('<h1>' +obj[ param['user_name']] + '</h1>'); 
+console.log(obj[ param['user_name']]); 
