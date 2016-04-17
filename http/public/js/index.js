@@ -5,7 +5,7 @@ $(document).ready(function(){
 		data:{
 			user_name:$('input[name=user_name]').val()
 		},
-		url: 'do.njs',
+		url: '/ID',
 		success:function(data){
 			console.log(data);
 			$("#result").html(data);
