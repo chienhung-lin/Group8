@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('button[type=submit]').click(function(){
 	    $.ajax({
-	    	type:"GET",
+	    	type:"POST",
 		data:{
 			user_name:$('input[name=user_name]').val()
 		},

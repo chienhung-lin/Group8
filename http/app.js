@@ -7,13 +7,16 @@ var port = parseInt(fs.readFileSync('./port'));
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended : true
+}));
 
 app.get('/', function(req, res) {
 	res.send('index.html');
 });
 
-app.get('/ID', function(req, res) {
-	var user_name = req.query.user_name;
+app.post('/ID', function(req, res) {
+	var user_name = req.body.user_name;
 	var name = JSON.parse(fs.readFileSync('./public/name.json', 'utf8'));
 
 	name = (typeof name[user_name] === 'undefined') ? 'NOT FOUND' : name[user_name] ;
